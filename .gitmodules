@@ -1,0 +1,9 @@
+[submodule "min-max-heap-rs"]
+	path = min-max-heap-rs
+	url = https://github.com/tov/min-max-heap-rs.git
+[submodule "weak-table-rs"]
+	path = weak-table-rs
+	url = https://github.com/tov/weak-table-rs.git
+[submodule "broadword-rs"]
+	path = broadword-rs
+	url = https://github.com/tov/broadword-rs.git
