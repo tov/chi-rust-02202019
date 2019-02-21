@@ -36,6 +36,11 @@ mod tests {
     }
 
     #[test]
+    fn sort_single() {
+        assert_eq!( sort_fun(vec![5]), &[5] );
+    }
+
+    #[test]
     fn sort_1234() {
         assert_eq!( sort_fun(vec![1, 2, 3, 4]), &[1, 2, 3, 4] );
     }
