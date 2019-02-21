@@ -28,7 +28,6 @@ pub fn my_sort<T: Ord>(slice: &mut [T])
 #[cfg(test)]
 mod tests {
     use super::*;
-    use quickcheck::quickcheck;
 
     fn sort_fun<T: Ord>(mut v: Vec<T>) -> Vec<T> {
         my_sort(&mut v);
@@ -48,23 +47,6 @@ mod tests {
     #[test]
     fn sort_4321() {
         assert_eq!( sort_fun(vec![3, 4, 2, 1]), &[1, 2, 3, 4] );
-    }
-
-    fn is_sorted<T: Ord>(v: &[T]) -> bool {
-        v.iter().zip(v.iter().skip(1))
-            .all(|(curr, next)| curr <= next)
-    }
-
-    quickcheck!{
-
-        fn prop_sort_i32(v: Vec<i32>) -> bool {
-            is_sorted(&sort_fun(v))
-        }
-
-        fn prop_sort_string(v: Vec<String>) -> bool {
-            is_sorted(&sort_fun(v))
-        }
-
     }
 
 }
