@@ -1,3 +1,4 @@
+//! Testing my buggy quicksort.
 
 fn partition<T: Ord>(slice: &mut [T]) -> usize {
     let pivot = slice.len() - 1;
@@ -17,7 +18,7 @@ fn partition<T: Ord>(slice: &mut [T]) -> usize {
 
 pub fn my_sort<T: Ord>(slice: &mut [T])
 {
-    if slice.len() > 1 {
+    if slice.len() > 2 {
         let pivot = partition(slice);
         my_sort(&mut slice[.. pivot]);
         my_sort(&mut slice[pivot + 1 ..]);
@@ -37,13 +38,13 @@ mod tests {
     quickcheck!{
 
         fn prop_sort_i32(original: Vec<i32>) -> bool {
-            let mut sorted = original.clone();
+            let mut sorted = original;
             my_sort(&mut sorted);
             is_sorted(&sorted)
         }
 
         fn prop_sort_string(original: Vec<String>) -> bool {
-            let mut sorted = original.clone();
+            let mut sorted = original;
             my_sort(&mut sorted);
             is_sorted(&sorted)
         }
