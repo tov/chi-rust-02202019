@@ -5,7 +5,6 @@ authors = ["Jesse A. Tov <jesse.tov@gmail.com>"]
 edition = "2018"
 
 [dev-dependencies]
-rand = "0.6.5"
 quickcheck = "0.8.2"
 
 [dependencies]
